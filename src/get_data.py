@@ -42,7 +42,22 @@ def most_recent_repo():
 
 
 def get_display_data():
-    repo = most_recent_repo
+    repo = most_recent_repo()
 
-    return {name: repo['name']}
+    time = datetime.strptime(repo['updated_at'], "%Y-%m-%dT%H:%M:%SZ")
+    formated_time = datetime.strftime(time, "%d/%m/%Y %H:%M:%S")
+
+    privacy = "Public"
+
+    if repo['private'] :
+        privacy = "Private"
+
+    data = {
+        'name': repo['name'],
+        'updated': formated_time,
+	'privacy': privacy
+
+    }
+
+    return data
 

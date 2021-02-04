@@ -19,15 +19,18 @@ epd.init(epd.FULL_UPDATE)
 epd.Clear(0xFF)
 
 # Drawing on the image
-font15 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 15)
+font20 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 20)
 font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
 
-data = gd.most_recent_repo()
+data = gd.get_display_data()
 
 image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame    
 draw = ImageDraw.Draw(image)
 
-draw.text((1, 1), data['name'], font = font15, fill = 0)
+draw.text((1, 1), data['name'], font = font20, fill = 0)
+draw.text((1, 41), data['updated'], font = font20, fill = 0)
+draw.text((1, 81), data['privacy'], font = font20, fill = 0)
+
 epd.display(epd.getbuffer(image))
 time.sleep(10)
 epd.Clear(0xFF)

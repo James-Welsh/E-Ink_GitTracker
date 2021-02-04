@@ -12,3 +12,15 @@ Here are the goals that I would like to hit:
 - [ ] Write a HowTo guide for the project.
 
 ## How to use
+
+- Once the repo is cloned create a file called key.txt within the src/ directory.
+- Generate a 'Personal access token' by clicking on your picture on the top right
+    > Settings > Developer settings > Personal access tokens.
+- Paste this into key.txt
+- Run either CommandLine.py or eInk_display.py (depending on whether you want to
+    run on the e ink display or in console) from the src directory making sure you
+    have all required python libraries.
+    - Pillow
+    - Datetime
+    - All waveshare dependencies
+- USE PYTHON 3.

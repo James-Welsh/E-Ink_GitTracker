@@ -4,7 +4,17 @@ from datetime import datetime
 
 
 def get_repo_info():
-    response = requests.get("https://api.github.com/users/James-Welsh/repos")
+
+    key_file = open('key.txt', 'r')
+    key = key_file.read().strip('\n')
+    key_file.close()
+    
+    headers = {
+        "Authorization": ("token " + key),
+        "Accept": "application/vnd.github.v3+json"
+    }
+
+    response = requests.get("https://api.github.com/user/repos", headers=headers)
     json_data = json.loads(response.content.decode('utf-8'))
     return json_data
 

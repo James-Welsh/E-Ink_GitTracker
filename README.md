@@ -7,5 +7,5 @@ Here are the goals that I would like to hit:
 
 - [X] Display most recently modified public repo name.
 - [X] Display most recently modified repo including private ones.
-- [ ] Display more info regarding repo (name, time edited, etc..)
-- [ ] Create a command line version that can be used without the Waveshare e ink display.
+- [X] Display more info regarding repo (name, time edited, etc..)
+- [X] Create a command line version that can be used without the Waveshare e ink display.
